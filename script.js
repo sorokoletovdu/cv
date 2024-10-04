@@ -1,30 +1,43 @@
-// Download the CV as PDF
-document.getElementById("download-btn").addEventListener("click", function() {
-    // Capture the CV section as an image
-    html2canvas(document.querySelector("#cv")).then(canvas => {
-        const imgData = canvas.toDataURL("image/png");
-        const pdf = new jsPDF();
+fetch('cv-data.json')
+    .then(response => response.json())
+    .then(data => {
+        // Populate personal information
+        document.querySelector("h1").innerText = data.personalInfo.name;
+        document.querySelector(".lead").innerText = `${data.personalInfo.title} | Remote`;
+        document.querySelector("a[href^='mailto']").innerText = data.personalInfo.email;
+        document.querySelector("a[href^='mailto']").href = `mailto:${data.personalInfo.email}`;
+        document.querySelector("a[href^='https://linkedin']").href = data.personalInfo.linkedin;
+        document.querySelector("a[href^='https://github']").href = data.personalInfo.github;
 
-        // Set PDF dimensions based on A4 size
-        const imgWidth = 210; // A4 page width in mm
-        const pageHeight = 297; // A4 page height in mm
-        const imgHeight = canvas.height * imgWidth / canvas.width;
-        let heightLeft = imgHeight;
-        let position = 0;
+        // Populate work experience
+        const workExperienceSection = document.querySelector("section");
+        data.workExperience.forEach(job => {
+            const jobDiv = document.createElement("div");
+            jobDiv.classList.add("mb-4");
 
-        // Add the image to the first page of the PDF
-        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
+            const title = document.createElement("h3");
+            title.classList.add("fw-bold");
+            title.innerText = job.title;
 
-        // Add new pages if content overflows
-        while (heightLeft >= 0) {
-            position = heightLeft - imgHeight;
-            pdf.addPage();
-            pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
-        }
+            const date = document.createElement("p");
+            date.classList.add("text-muted");
+            date.innerText = job.date;
 
-        // Save the generated PDF
-        pdf.save("Resume_Dmitrii_Sorokoletov.pdf");
+            const tasks = document.createElement("ul");
+            job.tasks.forEach(task => {
+                const taskItem = document.createElement("li");
+                taskItem.innerText = task;
+                tasks.appendChild(taskItem);
+            });
+
+            jobDiv.appendChild(title);
+            jobDiv.appendChild(date);
+            jobDiv.appendChild(tasks);
+            workExperienceSection.appendChild(jobDiv);
+        });
+
+        // Populate education
+        const educationSection = document.querySelectorAll("section")[1];
+        educationSection.querySelector("p:first-of-type").innerText = data.education.degree;
+        educationSection.querySelector("p:last-of-type").innerText = `${data.education.school} | ${data.education.location}`;
     });
-});

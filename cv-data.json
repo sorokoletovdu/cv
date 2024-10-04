@@ -1,0 +1,31 @@
+{
+  "personalInfo": {
+    "name": "Dmitrii Sorokoletov",
+    "title": "QA Engineer",
+    "email": "sorokoletovdu@icloud.com",
+    "linkedin": "https://linkedin.com/in/sorokoletovdu",
+    "github": "https://github.com/sorokoletovdu"
+  },
+  "workExperience": [
+    {
+      "title": "QA Engineer @ Quandoo (Germany) | Remote",
+      "date": "Dec. 2022 - Present",
+      "tasks": [
+        "Directed Automated Testing and CI/CD integration efforts...",
+        "Architected robust Test Frameworks for Web, Mobile, and API Testing..."
+      ]
+    },
+    {
+      "title": "Senior Software QA Automation Engineer @ Grid Dynamics (Poland) | Remote",
+      "date": "Jan. 2022 - Dec. 2022",
+      "tasks": [
+        "Engineered, executed, and debugged automated UI test cases utilizing Puppeteer, Jest, and Pytest frameworks..."
+      ]
+    }
+  ],
+  "education": {
+    "degree": "Bachelor’s degree in Electronic Computing Machine Development and Technology",
+    "school": "Southwest State University",
+    "location": "Kursk, Russia"
+  }
+}

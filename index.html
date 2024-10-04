@@ -4,48 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dmitrii Sorokoletov - CV</title>
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="cv">
-    <header>
-        <h1>Dmitrii Sorokoletov</h1>
-        <p>QA Engineer | Remote</p>
-        <p><a href="mailto:sorokoletovdu@icloud.com">sorokoletovdu@icloud.com</a> | <a href="https://linkedin.com/in/sorokoletovdu">LinkedIn</a> | <a href="https://github.com/sorokoletovdu">GitHub</a></p>
+
+<div id="cv" class="container mt-5 p-4 border rounded">
+    <header class="text-center mb-4">
+        <h1 class="display-4">Dmitrii Sorokoletov</h1>
+        <p class="lead">QA Engineer | Remote</p>
+        <p>
+            <a href="mailto:sorokoletovdu@icloud.com" class="text-decoration-none">sorokoletovdu@icloud.com</a> |
+            <a href="https://linkedin.com/in/sorokoletovdu" class="text-decoration-none">LinkedIn</a> |
+            <a href="https://github.com/sorokoletovdu" class="text-decoration-none">GitHub</a>
+        </p>
     </header>
 
     <section>
-        <h2>Work Experience</h2>
-        <div class="job">
-            <h3>QA Engineer @ Quandoo (Germany) | Remote</h3>
-            <p>Dec. 2022 - Present</p>
+        <h2 class="text-primary">Work Experience</h2>
+        <div class="mb-4">
+            <h3 class="fw-bold">QA Engineer @ Quandoo (Germany) | Remote</h3>
+            <p class="text-muted">Dec. 2022 - Present</p>
             <ul>
                 <li>Directed Automated Testing and CI/CD integration efforts...</li>
                 <li>Architected robust Test Frameworks for Web, Mobile, and API Testing...</li>
             </ul>
         </div>
 
-        <div class="job">
-            <h3>Senior Software QA Automation Engineer @ Grid Dynamics (Poland) | Remote</h3>
-            <p>Jan. 2022 - Dec. 2022</p>
+        <div class="mb-4">
+            <h3 class="fw-bold">Senior Software QA Automation Engineer @ Grid Dynamics (Poland) | Remote</h3>
+            <p class="text-muted">Jan. 2022 - Dec. 2022</p>
             <ul>
                 <li>Engineered, executed, and debugged automated UI test cases utilizing Puppeteer, Jest, and Pytest frameworks...</li>
             </ul>
         </div>
-
-        <!-- More jobs can be added here as needed -->
     </section>
 
     <section>
-        <h2>Education</h2>
+        <h2 class="text-primary">Education</h2>
         <p>Bachelor’s degree in Electronic Computing Machine Development and Technology</p>
         <p>Southwest State University | Kursk, Russia</p>
     </section>
 </div>
 
-<button id="download-btn">Download CV as PDF</button>
+<!-- Download CV as PDF button -->
+<div class="text-center mt-5">
+    <button id="download-btn" class="btn btn-primary">Download CV as PDF</button>
+</div>
 
-<!-- JS for rendering the PDF -->
+<!-- Bootstrap 5 JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- PDF generation script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
 <script src="script.js"></script>
