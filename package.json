@@ -1,0 +1,31 @@
+{
+  "name": "cv",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "generate:pdf": "astro build && tsx scripts/generate-pdf.tsx",
+    "ats:check": "tsx scripts/ats-check.ts"
+  },
+  "dependencies": {
+    "@fontsource/roboto": "^5.2.10",
+    "@fontsource/source-sans-3": "^5.2.9",
+    "@react-pdf/renderer": "^4.3.2",
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "^5.17.1",
+    "react": "^19.2.4",
+    "tailwindcss": "^4.2.1"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "@astrojs/check": "^0.9.6",
+    "@types/node": "^25.3.1",
+    "@types/react": "^19.2.14",
+    "gray-matter": "^4.0.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

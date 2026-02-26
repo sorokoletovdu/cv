@@ -1,0 +1,25 @@
+---
+import SectionHeader from './SectionHeader.astro';
+
+interface SkillGroup {
+  category: string;
+  items: string[];
+}
+
+interface Props {
+  skills: SkillGroup[];
+}
+
+const { skills } = Astro.props;
+---
+
+<SectionHeader title="Skills" />
+
+<div class="space-y-1">
+  {skills.map((group) => (
+    <div class="flex gap-2 text-[0.78rem]">
+      <span class="font-bold text-[--color-dark] shrink-0 min-w-[9rem]">{group.category}:</span>
+      <span class="text-[--color-gray]">{group.items.join(', ')}</span>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,53 @@
+name: ATS Check
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_description:
+        description: Paste the full job description text here
+        required: true
+        type: string
+
+jobs:
+  ats-check:
+    name: Run ATS Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-pnpm-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run ATS check
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: echo "${{ inputs.job_description }}" | pnpm tsx scripts/ats-check.ts
+
+      - name: Upload ATS report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ats-report
+          path: ats-report.md
+          retention-days: 90

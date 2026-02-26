@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+const { title = 'Dmitrii Sorokoletov — CV' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/cv/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-50 text-[--color-dark] font-[--font-sans] antialiased">
+    <!-- Download bar -->
+    <div class="bg-white border-b border-gray-200 print:hidden">
+      <div class="max-w-[794px] mx-auto px-6 py-3 flex justify-between items-center">
+        <span class="text-sm text-[--color-gray]">Dmitrii Sorokoletov — CV</span>
+        <a
+          href="/cv/Dmitrii_Sorokoletov_CV.pdf"
+          download="Dmitrii_Sorokoletov_CV.pdf"
+          class="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-semibold text-white rounded bg-(--color-accent) hover:opacity-90 transition-opacity"
+        >
+          Download PDF
+        </a>
+      </div>
+    </div>
+
+    <!-- CV content -->
+    <main class="max-w-[794px] mx-auto px-10 py-8 bg-white shadow-sm my-6 print:shadow-none print:my-0 print:px-0">
+      <slot />
+    </main>
+  </body>
+</html>

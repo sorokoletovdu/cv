@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+const accent = title.slice(0, 3);
+const rest = title.slice(3);
+---
+
+<div class="mb-3 mt-5">
+  <h2 class="font-[--font-heading] text-[1rem] font-bold uppercase tracking-wide">
+    <span class="text-(--color-accent)">{accent}</span>{rest}
+  </h2>
+  <hr class="mt-0.5 border-t border-[--color-rule]" />
+</div>

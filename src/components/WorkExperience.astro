@@ -1,0 +1,46 @@
+---
+import SectionHeader from './SectionHeader.astro';
+
+interface ExperienceEntry {
+  company: string;
+  title: string;
+  location: string;
+  start: string;
+  end: string;
+  bullets: string[];
+}
+
+interface Props {
+  experience: ExperienceEntry[];
+}
+
+const { experience } = Astro.props;
+---
+
+<SectionHeader title="Work Experience" />
+
+{experience.map((entry) => (
+  <div class="mb-4">
+    <!-- Role title + date range -->
+    <div class="flex justify-between items-baseline gap-2">
+      <h3 class="text-[0.85rem] font-bold text-[--color-dark]">
+        {entry.title}
+        <span class="font-normal text-[--color-gray]">, {entry.company}</span>
+      </h3>
+      <span class="text-[0.75rem] text-[--color-gray] whitespace-nowrap shrink-0">
+        {entry.start} – {entry.end}
+      </span>
+    </div>
+    <!-- Location -->
+    <p class="text-[0.75rem] text-[--color-light] mb-1 italic">{entry.location}</p>
+    <!-- Bullets -->
+    <ul class="space-y-0.5">
+      {entry.bullets.map((bullet) => (
+        <li class="text-[0.78rem] text-[--color-gray] flex gap-2">
+          <span class="text-(--color-accent) mt-[0.15em] shrink-0">▸</span>
+          <span>{bullet}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+))}

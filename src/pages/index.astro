@@ -1,0 +1,28 @@
+---
+import { getEntry } from 'astro:content';
+import WebLayout from '../layouts/WebLayout.astro';
+import Header from '../components/Header.astro';
+import WorkExperience from '../components/WorkExperience.astro';
+import Education from '../components/Education.astro';
+import Skills from '../components/Skills.astro';
+
+const resume = await getEntry('resume', 'resume');
+if (!resume) throw new Error('resume entry not found');
+const { data } = resume;
+---
+
+<WebLayout title={`${data.name} — CV`}>
+  <Header
+    name={data.name}
+    title={data.title}
+    phone={data.phone}
+    email={data.email}
+    linkedin={data.linkedin}
+    github={data.github}
+    permit={data.permit}
+    languages={data.languages}
+  />
+  <WorkExperience experience={data.experience} />
+  <Education education={data.education} />
+  <Skills skills={data.skills} />
+</WebLayout>
