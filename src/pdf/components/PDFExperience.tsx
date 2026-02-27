@@ -2,6 +2,7 @@
 import { View, Text, StyleSheet } from '@react-pdf/renderer';
 import { PDFSectionHeader } from './PDFSectionHeader.js';
 import { theme } from '../theme.js';
+import { formatDate } from '../../lib/formatDate.js';
 
 const s = StyleSheet.create({
   entry: { marginBottom: 8 },
@@ -74,7 +75,7 @@ export function PDFExperience({ experience }: Props) {
               <Text style={s.entryTitle}>{entry.title}</Text>
               <Text style={s.entryCompany}>, {entry.company}</Text>
             </View>
-            <Text style={s.dateRange}>{entry.start} – {entry.end}</Text>
+            <Text style={s.dateRange}>{formatDate(entry.start)} – {formatDate(entry.end)}</Text>
           </View>
           <Text style={s.location}>{entry.location}</Text>
           <View style={s.bullets}>

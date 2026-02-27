@@ -4,8 +4,8 @@ const experienceEntrySchema = z.object({
   company: z.string(),
   title: z.string(),
   location: z.string(),
-  start: z.string(),
-  end: z.string(),
+  start: z.string().regex(/^\d{4}-\d{2}$/, 'Must be YYYY-MM (e.g. 2024-12)'),
+  end: z.string().regex(/^\d{4}-\d{2}$/, 'Must be YYYY-MM (e.g. 2024-12)').or(z.literal('present')),
   bullets: z.array(z.string()),
 });
 

@@ -15,8 +15,8 @@ experience:
   - company: Eurowings Digital
     title: QA Automation Engineer
     location: Cologne (Hybrid)
-    start: "Dec. 2024"
-    end: Present
+    start: "2024-12"
+    end: present
     bullets:
       - Identified key areas for improvement in the existing test automation framework and proposed enhancements leveraging deep Playwright and TypeScript expertise.
       - Designed and implemented a booking data generation solution, including end-to-end CI pipeline configurations in Azure DevOps, that effectively addressed a significant bottleneck for the QA team, enhancing test reliability and reducing manual overhead.
@@ -26,8 +26,8 @@ experience:
   - company: Quandoo
     title: QA Engineer
     location: Remote
-    start: "Dec. 2022"
-    end: "Dec. 2024"
+    start: "2022-12"
+    end: "2024-12"
     bullets:
       - Directed Automated Testing and CI/CD integration efforts for a flagship product, leading to a 30% reduction in time-to-market and a 20% increase in deployment frequency, driving substantial efficiency gains.
       - Architected robust Test Frameworks for Web, Mobile, and API Testing, enhancing platform reliability and scalability, resulting in a 25% reduction in test failures and a 35% increase in test coverage for comprehensive testing.
@@ -37,8 +37,8 @@ experience:
   - company: Grid Dynamics
     title: Senior Software QA Automation Engineer
     location: Remote
-    start: "Jan. 2022"
-    end: "Dec. 2022"
+    start: "2022-01"
+    end: "2022-12"
     bullets:
       - Engineered, executed, and debugged automated UI test cases utilizing Puppeteer, Jest, and Pytest frameworks, resulting in a 40% reduction in test execution time and a 30% increase in test reliability.
       - Advocated for cross-functional testing by seamlessly integrating JS UI tests with the Python test framework, fostering team collaboration and maximizing testing coverage, generating a 20% improvement in test efficiency and a 15% reduction in time-to-resolution for critical issues.
@@ -48,8 +48,8 @@ experience:
   - company: ECommPay
     title: Senior Software QA Automation Engineer
     location: Remote
-    start: "Apr. 2018"
-    end: "Jan. 2022"
+    start: "2018-04"
+    end: "2022-01"
     bullets:
       - Orchestrated end-to-end testing initiatives, employing Codeception, Pytest, and diverse programming languages to execute automated test cases across backend, API, and UI layers, boosting test coverage by 25%.
       - Pioneered defect management tactics, slashing test execution and retesting time from 2 days to 4 hours, resulting in a 50% increase in overall testing efficiency and expediting product releases.
