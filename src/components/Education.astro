@@ -19,11 +19,11 @@ const { education } = Astro.props;
 {education.map((entry) => (
   <div class="mb-2">
     <div class="flex justify-between items-baseline gap-2">
-      <h3 class="text-[0.85rem] font-bold text-[--color-dark]">{entry.degree}</h3>
+      <h3 class="text-[0.85rem] font-bold text-(--color-dark)">{entry.degree}</h3>
     </div>
-    <p class="text-[0.78rem] text-[--color-gray]">
+    <p class="text-[0.78rem] text-(--color-gray)">
       {entry.school}
-      <span class="text-[--color-light]"> · {entry.location}</span>
+      <span class="text-(--color-light)"> · {entry.location}</span>
     </p>
   </div>
 ))}

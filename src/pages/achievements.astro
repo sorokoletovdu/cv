@@ -9,14 +9,14 @@ const { Content } = await render(achievement);
 ---
 
 <WebLayout title="Achievements — Dmitrii Sorokoletov">
-  <header class="mb-6 pb-4 border-b border-[--color-rule]">
-    <h1 class="font-[--font-heading] text-[1.6rem] font-bold text-[--color-dark]">{data.title}</h1>
-    <p class="mt-1 text-[0.82rem] text-[--color-gray]">
+  <header class="mb-6 pb-4 border-b border-(--color-rule)">
+    <h1 class="font-heading text-[1.6rem] font-bold text-(--color-dark)">{data.title}</h1>
+    <p class="mt-1 text-[0.82rem] text-(--color-gray)">
       {data.role} · {data.company} · {data.period}
     </p>
     <div class="mt-3 flex flex-wrap gap-1.5">
       {data.technologies.map((tech: string) => (
-        <span class="px-2 py-0.5 text-[0.7rem] rounded-full bg-gray-100 text-[--color-gray] font-medium">
+        <span class="px-2 py-0.5 text-[0.7rem] rounded-full bg-gray-100 text-(--color-gray) font-medium">
           {tech}
         </span>
       ))}
@@ -24,11 +24,11 @@ const { Content } = await render(achievement);
   </header>
 
   <div class="prose prose-sm max-w-none
-    prose-headings:font-[--font-heading] prose-headings:text-[--color-dark]
+    prose-headings:font-heading prose-headings:text-(--color-dark)
     prose-h2:text-[0.95rem] prose-h2:font-bold prose-h2:uppercase prose-h2:tracking-wide
-    prose-p:text-[0.82rem] prose-p:text-[--color-gray]
-    prose-li:text-[0.82rem] prose-li:text-[--color-gray]
-    prose-strong:text-[--color-dark] prose-strong:font-semibold
+    prose-p:text-[0.82rem] prose-p:text-(--color-gray)
+    prose-li:text-[0.82rem] prose-li:text-(--color-gray)
+    prose-strong:text-(--color-dark) prose-strong:font-semibold
     prose-a:text-(--color-accent)">
     <Content />
   </div>
