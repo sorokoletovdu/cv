@@ -114,12 +114,42 @@ When instructions contradict, the higher authority wins:
 
 ---
 
+## WAL Structure {#wal-structure}
+
+`WAL.md` must always contain exactly these sections in this order:
+
+| Section | Anchor | Content |
+|---|---|---|
+| Header | — | `Last updated: YYYY-MM-DD \| Session: <description>` |
+| SESSION OPEN PROCEDURE | — | Blockquote — 3 mandatory steps; never modify |
+| Current State | `#state` | Phase status table: all phases, one-line status per row |
+| Pending Work | `#pending` | `[ ]` items with concrete commands or file paths; no vague tasks |
+| Open REVIEW Items | `#reviews` | One entry per unresolved `<!-- REVIEW: -->` marker; empty section if none |
+| Do NOT Touch | `#dntouch` | Bullet list of paths/files AI must never modify directly |
+| Known Issues | `#issues` | Numbered list of active blockers; "No blocking issues" if none |
+| Next Session Must Read | `#next` | **No conditional `if` instructions.** State what is in progress now with exact file paths and commands. If nothing is in progress: one sentence saying so. |
+
+**Size constraint**: WAL must stay under 3,000 tokens. Completed items collapse to one-line
+summaries. Details belong in git history, not WAL.
+
+**Pending Work rules**: every item must be actionable on its own — include the exact command
+to run, or the exact file and what to do in it. Never write "investigate X" or "check Y".
+
+**Next Session Must Read rules**: written for cold-start. The AI reads it before the user
+has stated a task. Conditional `if working on X` instructions are forbidden — the AI cannot
+act on them. Write only what is unconditionally true: what is currently in progress, what
+file and line to continue from, what to run first.
+
+---
+
 ## Session Close Procedure {#close}
 
 Before ending a session, update `WAL.md`:
 
-1. Collapse completed items to one-line summaries — details belong in git history, not WAL.
-2. List any new REVIEW markers created this session under `## Open REVIEW Items`.
-3. Update phase status if any phase changed state.
-4. Update `## Next Session Must Read` if something unusual is pending.
-5. Keep WAL under 3,000 tokens total. Completed items must not accumulate.
+1. Update the `Last updated` line with today's date and a one-phrase session description.
+2. In `## Current State`, update any phase whose status changed.
+3. In `## Pending Work`, check off completed items (`[x]`) and add new items discovered this session.
+4. In `## Open REVIEW Items`, add any new `<!-- REVIEW: -->` markers created this session.
+5. In `## Next Session Must Read`, describe the current in-progress state with exact file paths.
+   If nothing is in progress, write one sentence: "No work in progress — ask the user."
+6. Keep WAL under 3,000 tokens. Collapse or remove anything completed or resolved.
