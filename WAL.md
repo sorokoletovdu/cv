@@ -53,16 +53,10 @@ No open REVIEW items.
 
 ## Known Issues {#issues}
 
-No blocking issues. Three verification tasks remain in Pending Work above.
+No blocking issues. One verification task remains in Pending Work above.
 
 ---
 
 ## Next Session Must Read {#next}
 
-No work currently in progress. All phases complete; only verification tasks remain (see Pending Work above).
-
-At session start: read `BOOT.md` → this file → then ask the user what to work on.
-
-Read #pending - not checked points and plan actions for that.
-
-Update specs with chosen approach and decisions.
+No work in progress — ask the user.
