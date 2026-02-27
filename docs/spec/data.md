@@ -41,8 +41,8 @@ experience:
   - company: string
     title: string
     location: string       # e.g. "Cologne (Hybrid)" or "Remote"
-    start: YYYY-MM          # ISO month: 2024-12
-    end: YYYY-MM | "present"
+    start: YYYY-MM          # ISO month: 2024-12 — stored as ISO, rendered as "Dec 2024"
+    end: YYYY-MM | "present" # "present" is lowercase in data; rendered as "Present"
     bullets:
       - string             # Each bullet: one achievement, one line
 
@@ -121,10 +121,18 @@ The Zod schema mirrors the YAML structure above. Astro calls `getCollection()` /
 build time and throws if any field is missing, wrongly typed, or out of the expected range.
 
 Key validation points:
-- `start` / `end` are typed as strings matching `YYYY-MM` or `"present"` — not native `Date` objects,
-  because YAML month-only dates (`2024-12`) have no standard JS mapping.
+- `start` / `end` are validated with `/^\d{4}-\d{2}$/` regex, or the literal `"present"` for `end`.
+  Not native `Date` objects — YAML month-only strings have no standard JS mapping.
 - `bullets` is `z.array(z.string()).min(1)` — empty bullet arrays fail the build.
 - `skills[].items` is `z.array(z.string())` — enforces plain text, no nested objects.
+
+### Date rendering {#validation.dates}
+
+ISO month strings in the data layer are converted to human-readable display using
+[dayjs](https://day.js.org): `"2024-12"` → `"Dec 2024"`, `"present"` → `"Present"`.
+
+The formatting utility lives at `src/lib/formatDate.ts` and is used by both
+`src/components/WorkExperience.astro` and `src/pdf/components/PDFExperience.tsx`.
 
 ---
 

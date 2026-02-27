@@ -2,7 +2,7 @@
 
 `spec://cv/wal`
 
-Last updated: 2026-02-27 | Session: IPC control plane — BOOT.md, WAL.md, thin wrappers, spec cleanup
+Last updated: 2026-02-27 | Session: date format — ISO in data, DayJS rendering, spec + Zod updated
 
 > **SESSION OPEN PROCEDURE**
 >
@@ -30,20 +30,15 @@ Last updated: 2026-02-27 | Session: IPC control plane — BOOT.md, WAL.md, thin 
 
 ## Pending Work {#pending}
 
-- [ ] Run `pnpm tsx scripts/generate-pdf.tsx` and verify PDF output visually against `spec://cv/design`
-- [ ] Run `pnpm tsx scripts/ats-check.ts` with a real `ANTHROPIC_API_KEY` in `.env` and a sample JD
-- [ ] Confirm `deploy-pages.yml` runs successfully end-to-end after the `@fontsource/open-sans` migration
+- [X] Run `pnpm tsx scripts/generate-pdf.tsx` and verify PDF output visually against `spec://cv/design`
+- [ ] Run `pnpm tsx scripts/ats-check.ts` with a real `ANTHROPIC_API_KEY` in `.env` and a sample JD (`docs/JOB-DESCRIPTION-EXAMPLE.md`). Check `scripts/ats-check.ts` top of file for how env vars are loaded (dotenv vs process.env) and confirm the key is read at runtime.
+- [X] Confirm `deploy-pages.yml` runs successfully end-to-end after the `@fontsource/open-sans` migration
 
 ---
 
 ## Open REVIEW Items {#reviews}
 
-- **Date format mismatch** (`src/content/resume/resume.md`):
-  `start`/`end` values use human-readable format (`"Dec. 2024"`, `"Present"`) but
-  `spec://cv/data#schema` specifies ISO month format (`YYYY-MM`, e.g. `2024-12`).
-  The Zod schema in `config.ts` may accept either format — needs author decision.
-  Current implementation may be intentionally different from spec.
-  <!-- REVIEW: date format mismatch — spec://cv/data#schema -->
+No open REVIEW items.
 
 ---
 
@@ -67,3 +62,7 @@ No blocking issues. Three verification tasks remain in Pending Work above.
 No work currently in progress. All phases complete; only verification tasks remain (see Pending Work above).
 
 At session start: read `BOOT.md` → this file → then ask the user what to work on.
+
+Read #pending - not checked points and plan actions for that.
+
+Update specs with chosen approach and decisions.
