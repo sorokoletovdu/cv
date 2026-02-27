@@ -2,7 +2,7 @@
 
 `spec://cv/wal`
 
-Last updated: 2026-02-27 | Session: IPC protocol implementation
+Last updated: 2026-02-27 | Session: IPC control plane — BOOT.md, WAL.md, thin wrappers, spec cleanup
 
 > **SESSION OPEN PROCEDURE**
 >
