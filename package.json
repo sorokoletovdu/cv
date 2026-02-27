@@ -12,8 +12,7 @@
     "ats:check": "tsx scripts/ats-check.ts"
   },
   "dependencies": {
-    "@fontsource/roboto": "^5.2.10",
-    "@fontsource/source-sans-3": "^5.2.9",
+    "@fontsource/open-sans": "^5.2.7",
     "@react-pdf/renderer": "^4.3.2",
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^5.17.1",

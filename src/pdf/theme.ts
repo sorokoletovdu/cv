@@ -8,8 +8,8 @@ export const theme = {
     white: '#FFFFFF',
   },
   fonts: {
-    heading: 'Roboto',
-    body: 'Source Sans 3',
+    heading: 'Open Sans',
+    body: 'Open Sans',
   },
   sizes: {
     name: 28,
