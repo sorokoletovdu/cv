@@ -1,0 +1,14 @@
+# Build output — regenerated on every build
+dist/
+
+# Dependencies — managed by pnpm
+node_modules/
+
+# Astro build cache — auto-generated
+.astro/
+
+# Lock file — machine-managed, never hand-edited
+pnpm-lock.yaml
+
+# Binary font files — fonts come from @fontsource via node_modules
+public/fonts/
