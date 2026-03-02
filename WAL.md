@@ -2,7 +2,7 @@
 
 `spec://cv/wal`
 
-Last updated: 2026-02-27 | Session: date format — ISO in data, DayJS rendering, spec + Zod updated
+Last updated: 2026-03-02 | Session: ats-check usage message fix + spec REVIEW marker
 
 > **SESSION OPEN PROCEDURE**
 >
@@ -14,25 +14,14 @@ Last updated: 2026-02-27 | Session: date format — ISO in data, DayJS rendering
 
 ## Current State {#state}
 
-**Overall status**: implementation complete — housekeeping tasks remain.
-
-| Phase | Status | Notes |
-|---|---|---|
-| Phase 0 — Cleanup & Foundation | ✓ Done | Astro initialized, legacy HTML/CSS/JS deleted. `docs/Resume_Dmitrii_Sorokoletov.md` deleted (prompt injection). |
-| Phase 1 — Data Layer | ✓ Done | `resume.md` + `achievements.md` in place, Zod schemas in `config.ts`. |
-| Phase 2 — Astro Components | ✓ Done | All components, layouts, pages built; `dist/` deployed to GitHub Pages. |
-| Phase 3 — PDF Generation | ✓ Done | All 5 PDF components, `ResumePDF.tsx`, fonts migrated to `@fontsource/open-sans`. |
-| Phase 3.5 — ATS Check Script | ✓ Done | `scripts/ats-check.ts` implemented. |
-| Phase 4 — GitHub Actions | ✓ Done | All 3 workflows (`deploy-pages`, `build-pdf`, `ats-check`) exist and run. |
-| Phase 5 — LinkedIn Achievements | ✓ Done | `src/pages/achievements.astro` and data file exist. |
+**Overall status**: engine implementation polishing
 
 ---
 
 ## Pending Work {#pending}
 
-- [X] Run `pnpm tsx scripts/generate-pdf.tsx` and verify PDF output visually against `spec://cv/design`
-- [ ] Run `pnpm tsx scripts/ats-check.ts` with a real `ANTHROPIC_API_KEY` in `.env` and a sample JD (`docs/JOB-DESCRIPTION-EXAMPLE.md`). Check `scripts/ats-check.ts` top of file for how env vars are loaded (dotenv vs process.env) and confirm the key is read at runtime.
-- [X] Confirm `deploy-pages.yml` runs successfully end-to-end after the `@fontsource/open-sans` migration
+- [x] Fix JD file reading from `scripts/ats-check.ts` — usage message updated, example path added.
+- [x] Resolve REVIEW: switched CI to file-based JD input (`jd_file` workflow input → file path arg); updated `ats-check.yml`, `docs/spec/ats.md#script.input`, `docs/spec/workflows.md#ats-check`.
 
 ---
 
@@ -53,10 +42,13 @@ No open REVIEW items.
 
 ## Known Issues {#issues}
 
-No blocking issues. One verification task remains in Pending Work above.
+No blocking issues.
 
 ---
 
 ## Next Session Must Read {#next}
 
 No work in progress — ask the user.
+
+To do a local end-to-end test: set `ANTHROPIC_API_KEY` in `.env`, then run:
+`pnpm tsx scripts/ats-check.ts docs/JOB-DESCRIPTION-EXAMPLE.md`
