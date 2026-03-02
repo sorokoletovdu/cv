@@ -83,14 +83,15 @@ ResumeWorded, with no Docker/Java overhead in CI.
 
 ```
 Inputs:
-  job_description: string   (paste full JD text into the workflow_dispatch UI)
+  jd_file: string   (path to JD file in the repo; default: docs/JOB-DESCRIPTION-EXAMPLE.md)
 
 Steps:
 1. actions/checkout
 2. pnpm/action-setup + actions/setup-node (LTS)
 3. pnpm install --frozen-lockfile
-4. pnpm tsx scripts/ats-check.ts
+4. pnpm tsx scripts/ats-check.ts "${{ inputs.jd_file }}"
    Reads:  src/content/resume/resume.md (plain text — what ATS scanners see)
+   Reads:  JD file at the path provided by jd_file input
    Calls:  Claude API with structured prompt (see spec://cv/ats#prompt)
    Writes: ats-report.md
 5. actions/upload-artifact  → ats-report.md artifact

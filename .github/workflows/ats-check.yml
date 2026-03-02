@@ -3,9 +3,10 @@ name: ATS Check
 on:
   workflow_dispatch:
     inputs:
-      job_description:
-        description: Paste the full job description text here
-        required: true
+      jd_file:
+        description: Path to JD file in the repo (relative to root)
+        required: false
+        default: docs/JOB-DESCRIPTION-EXAMPLE.md
         type: string
 
 jobs:
@@ -43,7 +44,7 @@ jobs:
       - name: Run ATS check
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: echo "${{ inputs.job_description }}" | pnpm tsx scripts/ats-check.ts
+        run: pnpm tsx scripts/ats-check.ts "${{ inputs.jd_file }}"
 
       - name: Upload ATS report
         uses: actions/upload-artifact@v4

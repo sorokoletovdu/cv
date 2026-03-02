@@ -49,8 +49,13 @@ import matter from 'gray-matter';
 
 - Resume: read `src/content/resume/resume.md` as plain text (YAML front matter stripped to
   key-value pairs, body included as-is). This mirrors what an ATS scanner ingests.
-- Job description: passed as `process.env.JD_TEXT` (set by `ats-check.yml` from the
-  `workflow_dispatch` input).
+- Job description: `process.argv[2]` — accepts one of:
+  - A file path (e.g. `docs/JOB-DESCRIPTION-EXAMPLE.md`) — read from disk
+  - A raw text string — used as-is
+  - Omitted with stdin piped — read from stdin
+
+  In CI (`ats-check.yml`), the `jd_file` workflow input (default:
+  `docs/JOB-DESCRIPTION-EXAMPLE.md`) is passed as the file path argument.
 
 ### Claude API Prompt {#prompt}
 
