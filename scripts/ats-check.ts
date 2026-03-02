@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import Anthropic from '@anthropic-ai/sdk';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import path from 'path';
@@ -15,7 +16,8 @@ async function readJD(): Promise<string> {
   if (!arg) {
     if (process.stdin.isTTY) {
       console.error(
-        'Usage: tsx scripts/ats-check.ts <jd-file.txt>\n' +
+        'Usage: tsx scripts/ats-check.ts docs/JOB-DESCRIPTION-EXAMPLE.md\n' +
+        '       tsx scripts/ats-check.ts <jd-file.md>\n' +
         '       tsx scripts/ats-check.ts "Paste JD text here"\n' +
         '       echo "JD text" | tsx scripts/ats-check.ts',
       );
@@ -68,7 +70,7 @@ async function main() {
       'You provide detailed, actionable resume feedback comparable to ResumeWorded.',
       '',
       'Your analysis must be:',
-      '- Specific to QA/Testing roles (understand Playwright, Selenium, CI/CD, test automation)',
+      '- Specific to QA/Testing/SDET roles (understand Playwright, TypeScript, CI/CD, test automation)',
       '- Honest: flag real weaknesses, not only positives',
       '- Actionable: every section ends with concrete next steps or rewrites',
       '- Formatted as clean Markdown ready to commit as ats-report.md',
