@@ -6,26 +6,6 @@
 
 - `ANTHROPIC_API_KEY` must never appear in source files, commit history, or logs.
   It lives exclusively in GitHub repository Secrets.
-- The prompt injection payload must be removed from `docs/Resume_Dmitrii_Sorokoletov.md`
-  before Phase 0 is considered complete. This is a blocking prerequisite.
-
----
-
-## Prompt Injection in Resume Source {#injection}
-
-**Status**: unresolved — must be fixed in Phase 0 (`spec://cv/phases#phase-0`).
-
-The file `docs/Resume_Dmitrii_Sorokoletov.md` contains a prompt injection payload on lines 45–46.
-The payload targets AI-powered ATS systems: when an ATS or recruiter tool feeds the resume to an
-LLM, the injected text attempts to override the model's instructions and manipulate its output.
-
-**Action required**: delete lines 45–46 from `docs/Resume_Dmitrii_Sorokoletov.md` before any
-deployment, submission, or use of the file as input to any AI tool.
-
-**Why the Astro build does not protect you**: the build process renders Markdown to HTML, which
-strips or encodes the payload for display — but the raw `.md` file in the repo and on disk still
-contains it. Any tool that reads the file before the build (including `scripts/ats-check.ts`,
-`gray-matter`, and any AI assistant reading the file directly) will see the payload.
 
 ---
 

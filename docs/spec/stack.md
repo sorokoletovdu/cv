@@ -77,7 +77,6 @@ Key properties:
 - Deterministic: same input always produces byte-identical output.
 - Proper font embedding: TTF/OTF registered via `Font.register()`, embedded in the PDF binary.
 - Full layout control: margins, line heights, page breaks are all explicit in React components.
-- Used by OpenResume and ResumeLM — proven for CV use at scale.
 
 Entry point: `scripts/generate-pdf.tsx` reads YAML data via `gray-matter`, renders
 `<ResumePDF />`, writes directly via `renderToFile()`. No `astro preview` server needed.

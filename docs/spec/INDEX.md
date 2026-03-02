@@ -25,7 +25,6 @@ WAL uses URI `spec://cv/wal` for reference. High-value WAL anchors:
 | `spec://cv/fonts` | [fonts.md](fonts.md) | Font specification: Open Sans weights, web vs PDF loading |
 | `spec://cv/stack` | [stack.md](stack.md) | Tech stack per technology: Astro, Tailwind v4, TypeScript, React-PDF |
 | `spec://cv/workflows` | [workflows.md](workflows.md) | GitHub Actions: deploy-pages, build-pdf, ats-check |
-| `spec://cv/phases` | [phases.md](phases.md) | Implementation roadmap: Phase 0–5 checklists |
 | `spec://cv/ats` | [ats.md](ats.md) | ATS design rules for CV layout + ATS check script spec |
 | `spec://cv/security` | [security.md](security.md) | Security constraints (prompt injection, secrets, AI disclosure policy) |
 
@@ -54,10 +53,6 @@ spec://cv/stack#tailwind                   — @theme config, no tailwind.config
 spec://cv/workflows#deploy                 — deploy-pages.yml steps + output
 spec://cv/workflows#build-pdf              — build-pdf.yml steps
 spec://cv/workflows#ats-check              — ats-check.yml inputs/steps/output
-
-spec://cv/phases#phase-0                   — cleanup checklist
-spec://cv/phases#phase-3                   — PDF generation checklist
-spec://cv/phases#phase-3-5                 — ATS script checklist
 
 spec://cv/ats#rules                        — ATS layout invariants (no tables, no columns)
 spec://cv/ats#prompt                       — Claude API prompt structure
