@@ -2,7 +2,7 @@
 
 `spec://cv/wal`
 
-Last updated: 2026-03-02 | Session: ats-check usage message fix + spec REVIEW marker
+Last updated: 2026-03-02 | Session: ATS CI file-based JD input, spec sync, phases.md cleanup
 
 > **SESSION OPEN PROCEDURE**
 >
