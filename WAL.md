@@ -2,7 +2,7 @@
 
 `spec://cv/wal`
 
-Last updated: 2026-03-03 | Session: favicon, README cleanup, remove achievements collection
+Last updated: 2026-03-03 | Session: Eurowings rewrite, bullet count spec, AI/LLM skills
 
 > **SESSION OPEN PROCEDURE**
 >
@@ -31,6 +31,10 @@ Last updated: 2026-03-03 | Session: favicon, README cleanup, remove achievements
 - [x] README: replaced Astro starter template with project-specific documentation.
 - [x] Removed `docs/LINKEDIN-ACHIEVEMENTS.md` scratch document.
 - [x] Removed achievements collection: `src/content/achievements/`, `src/pages/achievements.astro`, schema from `config.ts`. Updated BOOT.md and README.
+- [x] Codified bullet count per role as hard spec rule (`spec://cv/ats#bullet-count`): current role 5–6, second 4, older 2–3, hard max 7.
+- [x] Rewrote Eurowings section (6 bullets): greenfield architecture, ESLint AST plugins, data factory + self-healing pipeline, 4-shard/36-locale CI, Shift-Left + ISTQB gTAA mentoring, AI agent workflows.
+- [x] Trimmed Grid Dynamics and ECommPay to 3 bullets each (removed weakest bullets).
+- [x] Expanded skills: added ESLint, Vitest, Zod, OpenAPI to Tools; new AI / LLM category (AI Agents, Prompt Engineering, LLM Workflows); ISTQB → ISTQB gTAA.
 
 ---
 
@@ -58,6 +62,10 @@ No blocking issues.
 ## Next Session Must Read {#next}
 
 No work in progress — ask the user.
+
+Eurowings section is now fully rewritten and committed. Quandoo bullets have
+not been revised this session — they still carry the older verbose style and
+may benefit from a future pass.
 
 To do a local end-to-end test: set `ANTHROPIC_API_KEY` in `.env`, then run:
 `pnpm tsx scripts/ats-check.ts docs/JOB-DESCRIPTION-EXAMPLE.md`
