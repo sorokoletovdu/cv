@@ -2,7 +2,7 @@
 
 `spec://cv/wal`
 
-Last updated: 2026-03-02 | Session: ATS CI file-based JD input, spec sync, phases.md cleanup
+Last updated: 2026-03-03 | Session: mobile layout, dark mode, monochrome design, ATS retry
 
 > **SESSION OPEN PROCEDURE**
 >
@@ -22,6 +22,11 @@ Last updated: 2026-03-02 | Session: ATS CI file-based JD input, spec sync, phase
 
 - [x] Fix JD file reading from `scripts/ats-check.ts` — usage message updated, example path added.
 - [x] Resolve REVIEW: switched CI to file-based JD input (`jd_file` workflow input → file path arg); updated `ats-check.yml`, `docs/spec/ats.md#script.input`, `docs/spec/workflows.md#ats-check`.
+- [x] ATS retry: increased `maxRetries` to 5 in `scripts/ats-check.ts`.
+- [x] Location inline: moved job location after company name (both web and PDF).
+- [x] Mobile-responsive layout: `WebLayout`, `Header`, `WorkExperience`, `Skills`.
+- [x] Dark mode: class-based toggle with localStorage + system-preference detection.
+- [x] Monochrome design: removed accent color token from all components and PDF theme.
 
 ---
 
