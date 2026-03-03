@@ -23,22 +23,21 @@ const { experience } = Astro.props;
 {experience.map((entry) => (
   <div class="mb-4">
     <!-- Role title + date range -->
-    <div class="flex justify-between items-baseline gap-2">
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-0.5 sm:gap-2">
       <h3 class="text-[0.85rem] font-bold text-(--color-dark)">
         {entry.title}
         <span class="font-normal text-(--color-gray)">, {entry.company}</span>
+        <span class="text-[0.75rem] text-(--color-light) italic font-normal"> · {entry.location}</span>
       </h3>
-      <span class="text-[0.75rem] text-(--color-gray) whitespace-nowrap shrink-0">
+      <span class="text-[0.72rem] text-(--color-light) sm:text-[0.75rem] sm:text-(--color-gray) whitespace-nowrap shrink-0">
         {formatDate(entry.start)} – {formatDate(entry.end)}
       </span>
     </div>
-    <!-- Location -->
-    <p class="text-[0.75rem] text-(--color-light) mb-1 italic">{entry.location}</p>
     <!-- Bullets -->
     <ul class="space-y-0.5">
       {entry.bullets.map((bullet) => (
         <li class="text-[0.78rem] text-(--color-gray) flex gap-2">
-          <span class="text-(--color-accent) mt-[0.15em] shrink-0">▸</span>
+          <span class="text-(--color-dark) mt-[0.15em] shrink-0">▸</span>
           <span>{bullet}</span>
         </li>
       ))}

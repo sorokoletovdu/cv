@@ -26,20 +26,18 @@ const s = StyleSheet.create({
     color: theme.colors.gray,
     marginLeft: 8,
   },
-  location: {
+  locationInline: {
     fontFamily: theme.fonts.body,
     fontSize: theme.sizes.entryMeta,
     color: theme.colors.light,
     fontStyle: 'italic',
-    marginTop: 1,
-    marginBottom: 2,
   },
   bullets: { gap: 1.5 },
   bulletRow: { flexDirection: 'row', gap: 5 },
   bulletMark: {
     fontFamily: theme.fonts.body,
     fontSize: theme.sizes.body,
-    color: theme.colors.accent,
+    color: theme.colors.dark,
     marginTop: 0.5,
   },
   bulletText: {
@@ -74,10 +72,10 @@ export function PDFExperience({ experience }: Props) {
             <View style={s.titleBlock}>
               <Text style={s.entryTitle}>{entry.title}</Text>
               <Text style={s.entryCompany}>, {entry.company}</Text>
+              <Text style={s.locationInline}> · {entry.location}</Text>
             </View>
             <Text style={s.dateRange}>{formatDate(entry.start)} – {formatDate(entry.end)}</Text>
           </View>
-          <Text style={s.location}>{entry.location}</Text>
           <View style={s.bullets}>
             {entry.bullets.map((bullet, j) => (
               <View key={j} style={s.bulletRow}>
