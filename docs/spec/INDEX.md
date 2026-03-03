@@ -55,6 +55,8 @@ spec://cv/workflows#build-pdf              — build-pdf.yml steps
 spec://cv/workflows#ats-check              — ats-check.yml inputs/steps/output
 
 spec://cv/ats#rules                        — ATS layout invariants (no tables, no columns)
+spec://cv/ats#bullet-count                 — bullet count per role: rules + applied table
+spec://cv/ats#bullet-count.applied         — per-company target bullet counts
 spec://cv/ats#prompt                       — Claude API prompt structure
 
 spec://cv/security#injection               — prompt injection removal requirement

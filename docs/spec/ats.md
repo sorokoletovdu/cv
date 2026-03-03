@@ -33,6 +33,44 @@ not suggestions:
 
 ---
 
+## Bullet Count per Role {#bullet-count}
+
+The number of bullets per role is a hard constraint, not a stylistic preference. Too few signals
+under-investment; too many dilutes ATS keyword density and recruiter attention.
+
+### Rules {#bullet-count.rules}
+
+| Role recency | Bullet count |
+|---|---|
+| Current / most recent role | **5–6** |
+| Second-most-recent role | **4** |
+| Older roles (3rd position and beyond) | **2–3** |
+| Hard maximum (any role) | **7** |
+
+- **No role may have fewer than 2 bullets.** A single bullet signals either a short stint or
+  incomplete content — both are worse than omitting the role.
+- The current role gets the most bullets because it is the primary pitch. Depth must decay with
+  recency: detail should concentrate on what the candidate is doing now.
+- A second recent role at 4 bullets is permissible if it was a long or high-impact tenure.
+  Do not inflate older roles to match the current role count.
+
+### Applied to this resume {#bullet-count.applied}
+
+| Company | Target bullets |
+|---|---|
+| Eurowings Digital (current) | 5–6 |
+| Quandoo | 4 |
+| Grid Dynamics | 3 |
+| ECommPay | 3 |
+
+### Enforcement {#bullet-count.enforcement}
+
+When editing `src/content/resume/resume.md`, verify bullet counts against this table before
+committing. If a role exceeds its target, cut the weakest bullet (lowest specificity, no metric,
+vague verb). Never pad a bullet with filler to hit a minimum — merge or remove instead.
+
+---
+
 ## ATS Check Script {#script}
 
 File: `scripts/ats-check.ts`
