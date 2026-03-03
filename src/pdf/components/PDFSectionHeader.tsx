@@ -9,7 +9,7 @@ const s = StyleSheet.create({
     fontFamily: theme.fonts.heading,
     fontSize: theme.sizes.sectionHeader,
     fontWeight: 700,
-    color: theme.colors.accent,
+    color: theme.colors.dark,
     textTransform: 'uppercase',
     letterSpacing: 0.8,
   },
