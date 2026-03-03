@@ -2,7 +2,7 @@
 
 `spec://cv/wal`
 
-Last updated: 2026-03-03 | Session: mobile layout, dark mode, monochrome design, ATS retry
+Last updated: 2026-03-03 | Session: favicon, README cleanup, remove achievements collection
 
 > **SESSION OPEN PROCEDURE**
 >
@@ -27,6 +27,10 @@ Last updated: 2026-03-03 | Session: mobile layout, dark mode, monochrome design,
 - [x] Mobile-responsive layout: `WebLayout`, `Header`, `WorkExperience`, `Skills`.
 - [x] Dark mode: class-based toggle with localStorage + system-preference detection.
 - [x] Monochrome design: removed accent color token from all components and PDF theme.
+- [x] Favicon: replaced generic Astro logo with DS initials SVG (dark mode aware).
+- [x] README: replaced Astro starter template with project-specific documentation.
+- [x] Removed `docs/LINKEDIN-ACHIEVEMENTS.md` scratch document.
+- [x] Removed achievements collection: `src/content/achievements/`, `src/pages/achievements.astro`, schema from `config.ts`. Updated BOOT.md and README.
 
 ---
 
