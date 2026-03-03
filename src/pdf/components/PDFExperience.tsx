@@ -79,7 +79,7 @@ export function PDFExperience({ experience }: Props) {
           <View style={s.bullets}>
             {entry.bullets.map((bullet, j) => (
               <View key={j} style={s.bulletRow}>
-                <Text style={s.bulletMark}>▸</Text>
+                <Text style={s.bulletMark}>•</Text>
                 <Text style={s.bulletText}>{bullet}</Text>
               </View>
             ))}
