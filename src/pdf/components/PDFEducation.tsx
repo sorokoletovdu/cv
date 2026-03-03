@@ -36,7 +36,7 @@ export function PDFEducation({ education }: Props) {
           <Text style={s.degree}>{entry.degree}</Text>
           <Text style={s.school}>
             {entry.school}
-            <Text style={s.location}> · {entry.location}</Text>
+            {entry.year && <Text style={s.location}> · {entry.year}</Text>}
           </Text>
         </View>
       ))}

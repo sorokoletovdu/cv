@@ -17,7 +17,12 @@ export interface ExperienceEntry {
 export interface EducationEntry {
   degree: string;
   school: string;
-  location: string;
+  year?: number;
+}
+
+export interface CertificationEntry {
+  name: string;
+  status: string;
 }
 
 export interface SkillGroup {
@@ -36,5 +41,6 @@ export interface ResumeData {
   languages: string[];
   experience: ExperienceEntry[];
   education: EducationEntry[];
+  certifications?: CertificationEntry[];
   skills: SkillGroup[];
 }

@@ -3,6 +3,7 @@ import { Document, Page, StyleSheet } from '@react-pdf/renderer';
 import { PDFHeader } from './components/PDFHeader.js';
 import { PDFExperience } from './components/PDFExperience.js';
 import { PDFEducation } from './components/PDFEducation.js';
+import { PDFCertifications } from './components/PDFCertifications.js';
 import { PDFSkills } from './components/PDFSkills.js';
 import { theme } from './theme.js';
 import type { ResumeData } from '../lib/types.js';
@@ -44,6 +45,9 @@ export function ResumePDF({ data }: Props) {
         />
         <PDFExperience experience={data.experience} />
         <PDFEducation education={data.education} />
+        {data.certifications && data.certifications.length > 0 && (
+          <PDFCertifications certifications={data.certifications} />
+        )}
         <PDFSkills skills={data.skills} />
       </Page>
     </Document>

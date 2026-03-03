@@ -12,7 +12,12 @@ const experienceEntrySchema = z.object({
 const educationEntrySchema = z.object({
   degree: z.string(),
   school: z.string(),
-  location: z.string(),
+  year: z.number().optional(),
+});
+
+const certificationEntrySchema = z.object({
+  name: z.string(),
+  status: z.string(),
 });
 
 const skillGroupSchema = z.object({
@@ -33,6 +38,7 @@ const resumeCollection = defineCollection({
     languages: z.array(z.string()),
     experience: z.array(experienceEntrySchema),
     education: z.array(educationEntrySchema),
+    certifications: z.array(certificationEntrySchema).optional(),
     skills: z.array(skillGroupSchema),
   }),
 });
