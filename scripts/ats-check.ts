@@ -55,7 +55,7 @@ async function main() {
     process.exit(1);
   }
 
-  const client = new Anthropic();
+  const client = new Anthropic({ maxRetries: 5 });
   const today = new Date().toISOString().split('T')[0];
 
   console.error('Analyzing resume against job description...\n');
