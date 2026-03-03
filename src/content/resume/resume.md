@@ -18,10 +18,12 @@ experience:
     start: "2024-12"
     end: present
     bullets:
-      - Identified key areas for improvement in the existing test automation framework and proposed enhancements leveraging deep Playwright and TypeScript expertise.
-      - Designed and implemented a booking data generation solution, including end-to-end CI pipeline configurations in Azure DevOps, that effectively addressed a significant bottleneck for the QA team, enhancing test reliability and reducing manual overhead.
-      - Navigated challenges posed by slow, unstable environments by devising robust workarounds and optimizing communication channels to reduce disruptions, thereby enhancing test development productivity.
-      - Set forth a strategic vision to evolve the test automation framework into a robust, maintainable library serving both QA and development teams, to deliver cleaner, more efficient, and reusable testing solutions across projects.
+      - Architected a modular, ISTQB-aligned E2E framework (Playwright/TypeScript) from greenfield, replacing a legacy monolith; decoupled page objects into domain-specific fixture factories aligned with the Vue/Nuxt application architecture.
+      - Enforced architectural boundaries via custom ESLint AST plugins, banning locale-sensitive selectors and restricting locator creation to Page Objects, converting architectural rules into automated CI gates.
+      - Engineered an API-driven test data factory (Factory + Strategy pattern) and a self-healing cron pipeline classifying live flight routes by schedule reliability, eliminating manual test data maintenance.
+      - Designed GitHub Actions workflows for 4-shard parallel execution across 36 browser/locale project combinations; achieved >90% branch coverage on framework utilities via Vitest.
+      - Operationalized Shift-Left testing from Sprint Refinement/Planning and mentored cross-functional squads on ISTQB gTAA principles, enabling developers to author and own E2E tests independently.
+      - Integrated AI agents into engineering workflows; standardized prompt contexts (AGENTS.md / llms.txt) to align LLM-generated code with project architecture, reducing maintenance overhead.
 
   - company: Quandoo
     title: QA Engineer
@@ -43,7 +45,6 @@ experience:
       - Engineered, executed, and debugged automated UI test cases utilizing Puppeteer, Jest, and Pytest frameworks, resulting in a 40% reduction in test execution time and a 30% increase in test reliability.
       - Advocated for cross-functional testing by seamlessly integrating JS UI tests with the Python test framework, fostering team collaboration and maximizing testing coverage, generating a 20% improvement in test efficiency and a 15% reduction in time-to-resolution for critical issues.
       - Expertly resolved infrastructure issues by leveraging contracts, requirements, SQL, and SSH analysis, streamlining test framework integration, resulting in a 40% reduction in time and enhancing system stability with zero critical incidents post-implementation.
-      - Led technical interviews, provided mentorship to fellow engineers, resulting in a 30% reduction in onboarding time for new hires and contributing to the professional growth of team members.
 
   - company: ECommPay
     title: Senior Software QA Automation Engineer
@@ -54,7 +55,6 @@ experience:
       - Orchestrated end-to-end testing initiatives, employing Codeception, Pytest, and diverse programming languages to execute automated test cases across backend, API, and UI layers, boosting test coverage by 25%.
       - Pioneered defect management tactics, slashing test execution and retesting time from 2 days to 4 hours, resulting in a 50% increase in overall testing efficiency and expediting product releases.
       - Expertly resolved infrastructure challenges by leveraging SQL, SSH, Linux CLI, and Regex patterns, resulting in a 30% reduction in production and test system downtime.
-      - Championed knowledge transfer and skill development within the team, mentoring new members and streamlining onboarding to less than three months, increasing team cohesion by fostering a 60% decrease in interdepartmental communication gaps.
 
 education:
   - degree: "Bachelor's degree in Electronic Computing Machine Development and Technology"
@@ -88,11 +88,20 @@ skills:
       - SQL
       - Linux
       - Docker
+      - ESLint
+      - Vitest
+      - Zod
+      - OpenAPI
+  - category: AI / LLM
+    items:
+      - AI Agents
+      - Prompt Engineering
+      - LLM Workflows
   - category: Practices
     items:
       - Agile
       - Scrum
-      - ISTQB
+      - ISTQB gTAA
       - Shift-left
       - Defect Management
 ---
