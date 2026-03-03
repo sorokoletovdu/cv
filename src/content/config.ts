@@ -37,18 +37,6 @@ const resumeCollection = defineCollection({
   }),
 });
 
-const achievementsCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    company: z.string(),
-    role: z.string(),
-    period: z.string(),
-    technologies: z.array(z.string()),
-  }),
-});
-
 export const collections = {
   resume: resumeCollection,
-  achievements: achievementsCollection,
 };

@@ -18,7 +18,6 @@ src/content/resume/resume.md   ← single source of truth (YAML front matter)
 ```
 src/
   content/resume/resume.md       CV data (YAML front matter)
-  content/achievements/          LinkedIn achievements — web only, never in PDF
   components/                    Astro components (web layout)
   pdf/                           React-PDF components (PDF layout)
   pdf/fonts.ts                   Font registration (Open Sans via @fontsource)
