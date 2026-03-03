@@ -2,7 +2,7 @@
 
 `spec://cv/wal`
 
-Last updated: 2026-03-03 | Session: ATS pass — sole-QA scope, exploratory testing, keyword gaps
+Last updated: 2026-03-03 | Session: DRY/SRP refactor — shared types, formatUrl, formatDate, fonts, ats-check
 
 > **SESSION OPEN PROCEDURE**
 >
@@ -38,6 +38,7 @@ Last updated: 2026-03-03 | Session: ATS pass — sole-QA scope, exploratory test
 - [x] Rewrote Quandoo bullets: stripped verbose style, deflated stacked metrics, reframed bullet 4 to QA engineering (commit 4ba9d8b).
 - [x] ATS pass (context-verified): added sole-QA scope + exploratory/manual testing to Eurowings bullet 5; Playwright + sole-QA to Quandoo bullet 1; removed duplicate "Operationalized Shift-Left" in Quandoo; added Node.js + Vue.js to Skills (commit cee2144).
 - [x] ATS keyword refinements: corrected "Sole QA Automation Engineer" + dev count (10); added GitLab + "integration" keyword to Quandoo bullet 1; "unifying" verb; added Integration/Exploratory/Regression to Testing Types (commit 3a7b451).
+- [x] DRY/SRP refactor: extracted shared types (src/lib/types.ts) and URL utilities (src/lib/formatUrl.ts); updated all web + PDF consumers; merged duplicate PDFSectionHeader styles; replaced dayjs with Intl.DateTimeFormat; anchored fonts.ts to import.meta.url with idempotency guard; fixed ats-check.ts TOCTOU + Buffer.from (commits 21536fc, a794b92).
 
 ---
 
@@ -66,7 +67,7 @@ No blocking issues.
 
 No work in progress — ask the user.
 
-Resume is in a clean, consistent state across all roles. Grid Dynamics and ECommPay still carry the "resulting in X%" metric pattern — flagged by ATS report as repetitive and synthetic-looking; a future style pass on those two roles may be warranted.
+Codebase is in a clean, DRY state. Grid Dynamics and ECommPay still carry the "resulting in X%" metric pattern — addressed in the previous session (commits 8fa3987). All flagged simplify items have been resolved.
 
 To do a local end-to-end test: set `ANTHROPIC_API_KEY` in `.env`, then run:
 `pnpm tsx scripts/ats-check.ts docs/JOB-DESCRIPTION-EXAMPLE.md`
