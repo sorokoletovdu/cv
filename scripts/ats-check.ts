@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import Anthropic from '@anthropic-ai/sdk';
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -26,15 +26,17 @@ async function readJD(): Promise<string> {
     // Read from piped stdin
     const chunks: Buffer[] = [];
     for await (const chunk of process.stdin) {
-      chunks.push(Buffer.from(chunk));
+      chunks.push(chunk as Buffer);
     }
     return Buffer.concat(chunks).toString('utf-8').trim();
   }
 
   // File path?
   const resolved = path.resolve(process.cwd(), arg);
-  if (existsSync(resolved)) {
+  try {
     return readFileSync(resolved, 'utf-8').trim();
+  } catch (err: unknown) {
+    if ((err as NodeJS.ErrnoException).code !== 'ENOENT') throw err;
   }
 
   // Raw text argument

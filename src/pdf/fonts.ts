@@ -1,9 +1,16 @@
 import { Font } from '@react-pdf/renderer';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const OS = path.resolve(process.cwd(), 'node_modules/@fontsource/open-sans/files');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const OS = path.resolve(__dirname, '../../node_modules/@fontsource/open-sans/files');
+
+let registered = false;
 
 export function registerFonts(): void {
+  if (registered) return;
+  registered = true;
+
   Font.register({
     family: 'Open Sans',
     fonts: [

@@ -5,15 +5,7 @@ import { theme } from '../theme.js';
 const s = StyleSheet.create({
   wrapper: { marginTop: 10, marginBottom: 4 },
   titleRow: { flexDirection: 'row' },
-  accentPart: {
-    fontFamily: theme.fonts.heading,
-    fontSize: theme.sizes.sectionHeader,
-    fontWeight: 700,
-    color: theme.colors.dark,
-    textTransform: 'uppercase',
-    letterSpacing: 0.8,
-  },
-  restPart: {
+  titleText: {
     fontFamily: theme.fonts.heading,
     fontSize: theme.sizes.sectionHeader,
     fontWeight: 700,
@@ -39,8 +31,8 @@ export function PDFSectionHeader({ title }: Props) {
   return (
     <View style={s.wrapper}>
       <View style={s.titleRow}>
-        <Text style={s.accentPart}>{accent}</Text>
-        <Text style={s.restPart}>{rest}</Text>
+        <Text style={s.titleText}>{accent}</Text>
+        <Text style={s.titleText}>{rest}</Text>
       </View>
       <View style={s.rule} />
     </View>
