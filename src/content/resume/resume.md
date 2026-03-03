@@ -42,9 +42,9 @@ experience:
     start: "2022-01"
     end: "2022-12"
     bullets:
-      - Engineered, executed, and debugged automated UI test cases utilizing Puppeteer, Jest, and Pytest frameworks, resulting in a 40% reduction in test execution time and a 30% increase in test reliability.
-      - Advocated for cross-functional testing by seamlessly integrating JS UI tests with the Python test framework, fostering team collaboration and maximizing testing coverage, generating a 20% improvement in test efficiency and a 15% reduction in time-to-resolution for critical issues.
-      - Expertly resolved infrastructure issues by leveraging contracts, requirements, SQL, and SSH analysis, streamlining test framework integration, resulting in a 40% reduction in time and enhancing system stability with zero critical incidents post-implementation.
+      - Implemented automated UI tests using Puppeteer, Jest, and Pytest, replacing manual regression cycles with a repeatable automated baseline across the frontend stack.
+      - Unified JS (Puppeteer/Jest) and Python/Pytest test suites into a shared CI pipeline, extending automated coverage across frontend and backend layers.
+      - Diagnosed and resolved infrastructure blockers through SQL, SSH, and API contract analysis, streamlining test framework integration with zero critical incidents post-deployment.
 
   - company: ECommPay
     title: Senior Software QA Automation Engineer
@@ -52,9 +52,9 @@ experience:
     start: "2018-04"
     end: "2022-01"
     bullets:
-      - Orchestrated end-to-end testing initiatives, employing Codeception, Pytest, and diverse programming languages to execute automated test cases across backend, API, and UI layers, boosting test coverage by 25%.
-      - Pioneered defect management tactics, slashing test execution and retesting time from 2 days to 4 hours, resulting in a 50% increase in overall testing efficiency and expediting product releases.
-      - Expertly resolved infrastructure challenges by leveraging SQL, SSH, Linux CLI, and Regex patterns, resulting in a 30% reduction in production and test system downtime.
+      - Built end-to-end automated test suites covering backend, API, and UI layers using Codeception (PHP) and Pytest, establishing full-stack regression coverage.
+      - Introduced a structured defect management and retesting workflow, cutting the test execution and retest cycle from 2 days to 4 hours.
+      - Triaged production and test infrastructure failures using SQL, SSH, Linux CLI, and Regex patterns, reducing recurring system downtime across release cycles.
 
 education:
   - degree: "Bachelor's degree in Electronic Computing Machine Development and Technology"
