@@ -2,7 +2,7 @@
 
 `spec://cv/wal`
 
-Last updated: 2026-03-03 | Session: Eurowings rewrite, bullet count spec, AI/LLM skills
+Last updated: 2026-03-03 | Session: ATS pass — sole-QA scope, exploratory testing, keyword gaps
 
 > **SESSION OPEN PROCEDURE**
 >
@@ -35,6 +35,9 @@ Last updated: 2026-03-03 | Session: Eurowings rewrite, bullet count spec, AI/LLM
 - [x] Rewrote Eurowings section (6 bullets): greenfield architecture, ESLint AST plugins, data factory + self-healing pipeline, 4-shard/36-locale CI, Shift-Left + ISTQB gTAA mentoring, AI agent workflows.
 - [x] Trimmed Grid Dynamics and ECommPay to 3 bullets each (removed weakest bullets).
 - [x] Expanded skills: added ESLint, Vitest, Zod, OpenAPI to Tools; new AI / LLM category (AI Agents, Prompt Engineering, LLM Workflows); ISTQB → ISTQB gTAA.
+- [x] Rewrote Quandoo bullets: stripped verbose style, deflated stacked metrics, reframed bullet 4 to QA engineering (commit 4ba9d8b).
+- [x] ATS pass (context-verified): added sole-QA scope + exploratory/manual testing to Eurowings bullet 5; Playwright + sole-QA to Quandoo bullet 1; removed duplicate "Operationalized Shift-Left" in Quandoo; added Node.js + Vue.js to Skills (commit cee2144).
+- [x] ATS keyword refinements: corrected "Sole QA Automation Engineer" + dev count (10); added GitLab + "integration" keyword to Quandoo bullet 1; "unifying" verb; added Integration/Exploratory/Regression to Testing Types (commit 3a7b451).
 
 ---
 
@@ -63,9 +66,7 @@ No blocking issues.
 
 No work in progress — ask the user.
 
-Eurowings section is now fully rewritten and committed. Quandoo bullets have
-not been revised this session — they still carry the older verbose style and
-may benefit from a future pass.
+Resume is in a clean, consistent state across all roles. Grid Dynamics and ECommPay still carry the "resulting in X%" metric pattern — flagged by ATS report as repetitive and synthetic-looking; a future style pass on those two roles may be warranted.
 
 To do a local end-to-end test: set `ANTHROPIC_API_KEY` in `.env`, then run:
 `pnpm tsx scripts/ats-check.ts docs/JOB-DESCRIPTION-EXAMPLE.md`
