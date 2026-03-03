@@ -1,43 +1,70 @@
-# Astro Starter Kit: Minimal
+# CV
+
+Personal CV builder. One Markdown file drives three outputs: a web page (GitHub Pages),
+a downloadable PDF, and an ATS compatibility report.
+
+## Architecture
+
+```
+src/content/resume/resume.md   ← single source of truth (YAML front matter)
+        │
+        ├── Astro build ──────→ GitHub Pages (web CV)
+        ├── generate-pdf.tsx ─→ dist/Dmitrii_Sorokoletov_CV.pdf
+        └── ats-check.ts ─────→ ats-report.md (Claude API)
+```
+
+## Project Structure
+
+```
+src/
+  content/resume/resume.md       CV data (YAML front matter)
+  content/achievements/          LinkedIn achievements — web only, never in PDF
+  components/                    Astro components (web layout)
+  pdf/                           React-PDF components (PDF layout)
+  pdf/fonts.ts                   Font registration (Open Sans via @fontsource)
+  pdf/theme.ts                   Design tokens
+scripts/
+  generate-pdf.tsx               Renders PDF from resume front matter
+  ats-check.ts                   Runs ATS analysis against a job description
+docs/
+  JOB-DESCRIPTION-EXAMPLE.md    Example JD for local ATS checks
+```
+
+## Commands
+
+All commands run from the project root.
+
+| Command | Action |
+|---|---|
+| `pnpm install` | Install dependencies |
+| `pnpm dev` | Start dev server at `localhost:4321` |
+| `pnpm build` | Build site to `./dist/` |
+| `pnpm generate:pdf` | Build site + generate PDF |
+| `pnpm ats:check <jd-file>` | Run ATS check against a job description file |
+
+### ATS check — local usage
+
+Requires `ANTHROPIC_API_KEY` in `.env`:
 
 ```sh
-pnpm create astro@latest -- --template minimal
+pnpm ats:check docs/JOB-DESCRIPTION-EXAMPLE.md
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Writes `ats-report.md` to the project root.
 
-## 🚀 Project Structure
+## CI/CD Workflows
 
-Inside of your Astro project, you'll see the following folders and files:
+| Workflow | Trigger | Output |
+|---|---|---|
+| `deploy-pages` | Push to `master` | Deploys web CV to GitHub Pages; uploads PDF artifact (90 days) |
+| `build-pdf` | Manual | Uploads PDF artifact (30 days) |
+| `ats-check` | Manual (JD file path input) | Uploads `ats-report.md` artifact (90 days); requires `ANTHROPIC_API_KEY` secret |
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Tech Stack
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Framework**: Astro 5, TypeScript strict mode
+- **Styling**: Tailwind CSS v4 (CSS `@theme`, no config file)
+- **PDF**: `@react-pdf/renderer` — pure Node.js, no browser
+- **Fonts**: `@fontsource/open-sans` — WOFF from npm
+- **ATS**: `@anthropic-ai/sdk`
+- **Package manager**: pnpm
