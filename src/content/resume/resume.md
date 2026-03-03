@@ -22,7 +22,7 @@ experience:
       - Enforced architectural boundaries via custom ESLint AST plugins, banning locale-sensitive selectors and restricting locator creation to Page Objects, converting architectural rules into automated CI gates.
       - Engineered an API-driven test data factory (Factory + Strategy pattern) and a self-healing cron pipeline classifying live flight routes by schedule reliability, eliminating manual test data maintenance.
       - Designed GitHub Actions workflows for 4-shard parallel execution across 36 browser/locale project combinations; achieved >90% branch coverage on framework utilities via Vitest.
-      - Operationalized Shift-Left testing from Sprint Refinement/Planning and mentored cross-functional squads on ISTQB gTAA principles, enabling developers to author and own E2E tests independently.
+      - Sole QA engineer embedded across two cross-functional squads; drove Shift-Left testing from Sprint Refinement, conducted regular exploratory and release-cycle manual regression testing, and mentored developers on ISTQB gTAA principles to enable independent E2E test authorship.
       - Integrated AI agents into engineering workflows; standardized prompt contexts (AGENTS.md / llms.txt) to align LLM-generated code with project architecture, reducing maintenance overhead.
 
   - company: Quandoo
@@ -31,9 +31,9 @@ experience:
     start: "2022-12"
     end: "2024-12"
     bullets:
-      - Built automated E2E and API test suites for the flagship restaurant-booking product, integrated them into CI/CD pipelines, and reduced manual regression cycles to increase deployment cadence.
+      - Sole QA engineer on a cross-functional squad; built Playwright E2E and API test suites for the flagship restaurant-booking product, integrated them into CI/CD pipelines, and reduced manual regression cycles to increase deployment cadence.
       - Architected test frameworks covering Web, Mobile, and API layers, standardising tooling across QA and development teams and reducing recurring test failures.
-      - Operationalized Shift-Left testing by introducing Definition of Done and Definition of Ready artifacts, moving defect detection upstream and reducing late-stage defect escape rate.
+      - Embedded quality gates into the SDLC by introducing Definition of Done and Definition of Ready artifacts, moving defect detection upstream and reducing late-stage defect escape rate.
       - Reduced user-reported defects by correlating production incident data with coverage gaps and realigning regression priorities toward high-impact user flows.
 
   - company: Grid Dynamics
@@ -67,6 +67,7 @@ skills:
       - TypeScript
       - Playwright
       - JavaScript
+      - Node.js
       - Python
       - PyTest
       - PHP
@@ -88,6 +89,7 @@ skills:
       - SQL
       - Linux
       - Docker
+      - Vue.js
       - ESLint
       - Vitest
       - Zod
