@@ -31,10 +31,10 @@ experience:
     start: "2022-12"
     end: "2024-12"
     bullets:
-      - Directed Automated Testing and CI/CD integration efforts for a flagship product, leading to a 30% reduction in time-to-market and a 20% increase in deployment frequency, driving substantial efficiency gains.
-      - Architected robust Test Frameworks for Web, Mobile, and API Testing, enhancing platform reliability and scalability, resulting in a 25% reduction in test failures and a 35% increase in test coverage for comprehensive testing.
-      - Initiated the revitalization of team processes by implementing the shift-left testing approach and instituting key artifacts such as the Definition of Done and the Definition of Ready documents, resulting in a 50% reduction in defect escape rate and a 30% increase in sprint velocity, thereby optimizing project workflows.
-      - Elevated user experience by comprehensively analyzing the latest user behavior statistics and strategically realigning product development priorities, resulting in a 25% increase in user satisfaction scores and a 20% decrease in user-reported issues.
+      - Built automated E2E and API test suites for the flagship restaurant-booking product, integrated them into CI/CD pipelines, and reduced manual regression cycles to increase deployment cadence.
+      - Architected test frameworks covering Web, Mobile, and API layers, standardising tooling across QA and development teams and reducing recurring test failures.
+      - Operationalized Shift-Left testing by introducing Definition of Done and Definition of Ready artifacts, moving defect detection upstream and reducing late-stage defect escape rate.
+      - Reduced user-reported defects by correlating production incident data with coverage gaps and realigning regression priorities toward high-impact user flows.
 
   - company: Grid Dynamics
     title: Senior Software QA Automation Engineer
