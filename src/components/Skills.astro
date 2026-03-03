@@ -1,10 +1,6 @@
 ---
 import SectionHeader from './SectionHeader.astro';
-
-interface SkillGroup {
-  category: string;
-  items: string[];
-}
+import type { SkillGroup } from '../lib/types';
 
 interface Props {
   skills: SkillGroup[];

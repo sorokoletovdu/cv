@@ -1,6 +1,7 @@
 /** @jsxImportSource react */
 import { View, Text, StyleSheet, Link } from '@react-pdf/renderer';
 import { theme } from '../theme.js';
+import { linkedInHandle, gitHubHandle } from '../../lib/formatUrl.js';
 
 const s = StyleSheet.create({
   header: { alignItems: 'center', marginBottom: 10 },
@@ -83,8 +84,8 @@ export function PDFHeader({ name, title, phone, email, linkedin, github, permit,
   const [firstName, ...rest] = name.split(' ');
   const lastName = rest.join(' ');
 
-  const linkedinDisplay = linkedin.replace(/https?:\/\/(www\.)?linkedin\.com\/in\//, 'linkedin.com/in/').replace(/\/$/, '');
-  const githubDisplay = github.replace(/https?:\/\/(www\.)?github\.com\//, 'github.com/').replace(/\/$/, '');
+  const linkedinDisplay = `linkedin.com/in/${linkedInHandle(linkedin)}`;
+  const githubDisplay = `github.com/${gitHubHandle(github)}`;
 
   return (
     <View style={s.header}>

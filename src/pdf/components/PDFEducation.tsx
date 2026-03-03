@@ -1,5 +1,6 @@
 /** @jsxImportSource react */
 import { View, Text, StyleSheet } from '@react-pdf/renderer';
+import type { EducationEntry } from '../../lib/types.js';
 import { PDFSectionHeader } from './PDFSectionHeader.js';
 import { theme } from '../theme.js';
 
@@ -21,12 +22,6 @@ const s = StyleSheet.create({
     color: theme.colors.light,
   },
 });
-
-interface EducationEntry {
-  degree: string;
-  school: string;
-  location: string;
-}
 
 interface Props {
   education: EducationEntry[];

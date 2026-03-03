@@ -1,4 +1,6 @@
 ---
+import { linkedInHandle, gitHubHandle } from '../lib/formatUrl';
+
 interface Props {
   name: string;
   title: string;
@@ -11,16 +13,17 @@ interface Props {
 }
 
 const { name, title, phone, email, linkedin, github, permit, languages } = Astro.props;
-
-const linkedinHandle = linkedin.replace(/https?:\/\/(www\.)?linkedin\.com\/in\//, '').replace(/\/$/, '');
-const githubHandle = github.replace(/https?:\/\/(www\.)?github\.com\//, '').replace(/\/$/, '');
+const [firstName, ...lastParts] = name.split(' ');
+const lastName = lastParts.join(' ');
+const linkedinHandle = linkedInHandle(linkedin);
+const githubHandle = gitHubHandle(github);
 ---
 
 <header class="text-center mb-6 pb-4 border-b border-(--color-rule)">
   <!-- Name -->
   <h1 class="font-heading text-[1.5rem] sm:text-[2rem] font-bold tracking-wide text-(--color-dark) leading-tight uppercase">
-    {name.split(' ')[0]}
-    <span class="font-light">{name.split(' ').slice(1).join(' ')}</span>
+    {firstName}
+    <span class="font-light">{lastName}</span>
   </h1>
 
   <!-- Title -->

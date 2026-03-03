@@ -1,5 +1,6 @@
 /** @jsxImportSource react */
 import { View, Text, StyleSheet } from '@react-pdf/renderer';
+import type { ExperienceEntry } from '../../lib/types.js';
 import { PDFSectionHeader } from './PDFSectionHeader.js';
 import { theme } from '../theme.js';
 import { formatDate } from '../../lib/formatDate.js';
@@ -48,15 +49,6 @@ const s = StyleSheet.create({
     lineHeight: 1.35,
   },
 });
-
-interface ExperienceEntry {
-  company: string;
-  title: string;
-  location: string;
-  start: string;
-  end: string;
-  bullets: string[];
-}
 
 interface Props {
   experience: ExperienceEntry[];

@@ -1,15 +1,7 @@
 ---
 import SectionHeader from './SectionHeader.astro';
 import { formatDate } from '../lib/formatDate';
-
-interface ExperienceEntry {
-  company: string;
-  title: string;
-  location: string;
-  start: string;
-  end: string;
-  bullets: string[];
-}
+import type { ExperienceEntry } from '../lib/types';
 
 interface Props {
   experience: ExperienceEntry[];
@@ -37,7 +29,7 @@ const { experience } = Astro.props;
     <ul class="space-y-0.5">
       {entry.bullets.map((bullet) => (
         <li class="text-[0.78rem] text-(--color-gray) flex gap-2">
-          <span class="text-(--color-dark) mt-[0.15em] shrink-0">▸</span>
+          <span class="text-(--color-dark) mt-[0.15em] shrink-0">•</span>
           <span>{bullet}</span>
         </li>
       ))}

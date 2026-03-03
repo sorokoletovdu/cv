@@ -5,6 +5,7 @@ import { PDFExperience } from './components/PDFExperience.js';
 import { PDFEducation } from './components/PDFEducation.js';
 import { PDFSkills } from './components/PDFSkills.js';
 import { theme } from './theme.js';
+import type { ResumeData } from '../lib/types.js';
 
 const s = StyleSheet.create({
   page: {
@@ -17,34 +18,6 @@ const s = StyleSheet.create({
     fontSize: theme.sizes.body,
   },
 });
-
-interface ResumeData {
-  name: string;
-  title: string;
-  phone: string;
-  email: string;
-  linkedin: string;
-  github: string;
-  permit: string;
-  languages: string[];
-  experience: {
-    company: string;
-    title: string;
-    location: string;
-    start: string;
-    end: string;
-    bullets: string[];
-  }[];
-  education: {
-    degree: string;
-    school: string;
-    location: string;
-  }[];
-  skills: {
-    category: string;
-    items: string[];
-  }[];
-}
 
 interface Props {
   data: ResumeData;

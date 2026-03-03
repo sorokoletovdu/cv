@@ -1,11 +1,6 @@
 ---
 import SectionHeader from './SectionHeader.astro';
-
-interface EducationEntry {
-  degree: string;
-  school: string;
-  location: string;
-}
+import type { EducationEntry } from '../lib/types';
 
 interface Props {
   education: EducationEntry[];

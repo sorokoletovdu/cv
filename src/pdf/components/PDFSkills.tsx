@@ -1,5 +1,6 @@
 /** @jsxImportSource react */
 import { View, Text, StyleSheet } from '@react-pdf/renderer';
+import type { SkillGroup } from '../../lib/types.js';
 import { PDFSectionHeader } from './PDFSectionHeader.js';
 import { theme } from '../theme.js';
 
@@ -21,11 +22,6 @@ const s = StyleSheet.create({
     lineHeight: 1.3,
   },
 });
-
-interface SkillGroup {
-  category: string;
-  items: string[];
-}
 
 interface Props {
   skills: SkillGroup[];
