@@ -2,7 +2,7 @@
 
 `spec://cv/wal`
 
-Last updated: 2026-03-03 | Session: DRY/SRP refactor — shared types, formatUrl, formatDate, fonts, ats-check
+Last updated: 2026-03-04 | Session: ATS improvements committed (3efbc64)
 
 > **SESSION OPEN PROCEDURE**
 >
@@ -14,31 +14,14 @@ Last updated: 2026-03-03 | Session: DRY/SRP refactor — shared types, formatUrl
 
 ## Current State {#state}
 
-**Overall status**: engine implementation polishing
+**Overall status**: clean — all ATS improvements committed (3efbc64)
 
 ---
 
 ## Pending Work {#pending}
 
-- [x] Fix JD file reading from `scripts/ats-check.ts` — usage message updated, example path added.
-- [x] Resolve REVIEW: switched CI to file-based JD input (`jd_file` workflow input → file path arg); updated `ats-check.yml`, `docs/spec/ats.md#script.input`, `docs/spec/workflows.md#ats-check`.
-- [x] ATS retry: increased `maxRetries` to 5 in `scripts/ats-check.ts`.
-- [x] Location inline: moved job location after company name (both web and PDF).
-- [x] Mobile-responsive layout: `WebLayout`, `Header`, `WorkExperience`, `Skills`.
-- [x] Dark mode: class-based toggle with localStorage + system-preference detection.
-- [x] Monochrome design: removed accent color token from all components and PDF theme.
-- [x] Favicon: replaced generic Astro logo with DS initials SVG (dark mode aware).
-- [x] README: replaced Astro starter template with project-specific documentation.
-- [x] Removed `docs/LINKEDIN-ACHIEVEMENTS.md` scratch document.
-- [x] Removed achievements collection: `src/content/achievements/`, `src/pages/achievements.astro`, schema from `config.ts`. Updated BOOT.md and README.
-- [x] Codified bullet count per role as hard spec rule (`spec://cv/ats#bullet-count`): current role 5–6, second 4, older 2–3, hard max 7.
-- [x] Rewrote Eurowings section (6 bullets): greenfield architecture, ESLint AST plugins, data factory + self-healing pipeline, 4-shard/36-locale CI, Shift-Left + ISTQB gTAA mentoring, AI agent workflows.
-- [x] Trimmed Grid Dynamics and ECommPay to 3 bullets each (removed weakest bullets).
-- [x] Expanded skills: added ESLint, Vitest, Zod, OpenAPI to Tools; new AI / LLM category (AI Agents, Prompt Engineering, LLM Workflows); ISTQB → ISTQB gTAA.
-- [x] Rewrote Quandoo bullets: stripped verbose style, deflated stacked metrics, reframed bullet 4 to QA engineering (commit 4ba9d8b).
-- [x] ATS pass (context-verified): added sole-QA scope + exploratory/manual testing to Eurowings bullet 5; Playwright + sole-QA to Quandoo bullet 1; removed duplicate "Operationalized Shift-Left" in Quandoo; added Node.js + Vue.js to Skills (commit cee2144).
-- [x] ATS keyword refinements: corrected "Sole QA Automation Engineer" + dev count (10); added GitLab + "integration" keyword to Quandoo bullet 1; "unifying" verb; added Integration/Exploratory/Regression to Testing Types (commit 3a7b451).
-- [x] DRY/SRP refactor: extracted shared types (src/lib/types.ts) and URL utilities (src/lib/formatUrl.ts); updated all web + PDF consumers; merged duplicate PDFSectionHeader styles; replaced dayjs with Intl.DateTimeFormat; anchored fonts.ts to import.meta.url with idempotency guard; fixed ats-check.ts TOCTOU + Buffer.from (commits 21536fc, a794b92).
+- [x] All previous implementation phases complete (see git log for details).
+- [x] ATS improvements committed: bullet metrics, certifications section, education year, skills enrichment (3efbc64).
 
 ---
 
@@ -67,7 +50,5 @@ No blocking issues.
 
 No work in progress — ask the user.
 
-Codebase is in a clean, DRY state. Grid Dynamics and ECommPay still carry the "resulting in X%" metric pattern — addressed in the previous session (commits 8fa3987). All flagged simplify items have been resolved.
-
-To do a local end-to-end test: set `ANTHROPIC_API_KEY` in `.env`, then run:
-`pnpm tsx scripts/ats-check.ts docs/JOB-DESCRIPTION-EXAMPLE.md`
+Codebase is clean. ATS report review complete and committed (3efbc64). To run a fresh ATS check against a real JD: set `ANTHROPIC_API_KEY` in `.env`, then run:
+`pnpm tsx scripts/ats-check.ts <path-to-jd-file.md>`
