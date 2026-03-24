@@ -2,7 +2,7 @@
 
 `spec://cv/wal`
 
-Last updated: 2026-03-04 | Session: ATS improvements committed (3efbc64)
+Last updated: 2026-03-24 | Session: Professional Summary added, certifications removed, bold markdown, PDF page-break fixes
 
 > **SESSION OPEN PROCEDURE**
 >
@@ -14,14 +14,20 @@ Last updated: 2026-03-04 | Session: ATS improvements committed (3efbc64)
 
 ## Current State {#state}
 
-**Overall status**: clean — all ATS improvements committed (3efbc64)
+**Overall status**: uncommitted changes — session work done, not yet committed
+
+| Area | Status |
+|---|---|
+| Professional Summary | Added across all layers (data, schema, types, web, PDF) — uncommitted |
+| Certifications section | Removed from all layers — uncommitted |
+| Bold markdown in bullets | `**text**` renders as `<strong>` on web, inline bold in PDF — uncommitted |
+| PDF page-break control | Section header anchored to first entry in Experience; compact sections wrapped with `wrap={false}` — uncommitted |
 
 ---
 
 ## Pending Work {#pending}
 
-- [x] All previous implementation phases complete (see git log for details).
-- [x] ATS improvements committed: bullet metrics, certifications section, education year, skills enrichment (3efbc64).
+- [ ] Commit session changes (split into logical commits per CLAUDE.md atomicity rules)
 
 ---
 
@@ -48,7 +54,8 @@ No blocking issues.
 
 ## Next Session Must Read {#next}
 
-No work in progress — ask the user.
-
-Codebase is clean. ATS report review complete and committed (3efbc64). To run a fresh ATS check against a real JD: set `ANTHROPIC_API_KEY` in `.env`, then run:
-`pnpm tsx scripts/ats-check.ts <path-to-jd-file.md>`
+Uncommitted changes from this session. Run `git diff --stat` to see affected files. Commit before starting new feature work, splitting by concern:
+1. `feat(resume): add Professional Summary section` — resume.md, config.ts, types.ts, Summary.astro, PDFSummary.tsx, index.astro, ResumePDF.tsx
+2. `feat(resume): remove certifications section` — resume.md, config.ts, types.ts, index.astro, ResumePDF.tsx (Certifications.astro and PDFCertifications.tsx kept as dead files — can delete)
+3. `feat(pdf,web): render bold markdown in experience bullets` — parseBold.ts, WorkExperience.astro, PDFExperience.tsx
+4. `fix(pdf): prevent section header / entry page-break splits` — PDFExperience.tsx, PDFSummary.tsx, PDFEducation.tsx, PDFSkills.tsx
