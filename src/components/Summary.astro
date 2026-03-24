@@ -1,0 +1,13 @@
+---
+import SectionHeader from './SectionHeader.astro';
+
+interface Props {
+  summary: string;
+}
+
+const { summary } = Astro.props;
+---
+
+<SectionHeader title="Professional Summary" />
+
+<p class="text-[0.85rem] leading-relaxed text-(--color-dark)">{summary}</p>

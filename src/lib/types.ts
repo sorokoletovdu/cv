@@ -20,11 +20,6 @@ export interface EducationEntry {
   year?: number;
 }
 
-export interface CertificationEntry {
-  name: string;
-  status: string;
-}
-
 export interface SkillGroup {
   category: string;
   items: string[];
@@ -39,8 +34,8 @@ export interface ResumeData {
   github: string;
   permit: string;
   languages: string[];
+  summary?: string;
   experience: ExperienceEntry[];
   education: EducationEntry[];
-  certifications?: CertificationEntry[];
   skills: SkillGroup[];
 }

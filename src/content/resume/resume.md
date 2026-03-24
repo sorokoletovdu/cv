@@ -1,6 +1,6 @@
 ---
 name: Dmitrii Sorokoletov
-title: QA Automation Engineer
+title: Senior SDET | QA Automation Engineer
 phone: "+49-1520-388-0560"
 email: sorokoletovdu@icloud.com
 linkedin: https://linkedin.com/in/sorokoletovdu/
@@ -11,6 +11,13 @@ languages:
   - Deutsch (Beginner)
   - Russian (Native)
 
+summary: >
+  Senior SDET and QA Architect with 8 years of experience specializing in TypeScript, Playwright,
+  and CI/CD infrastructure. Proven track record of migrating legacy monoliths to greenfield,
+  squad-owned testing ecosystems and building self-healing test data pipelines. Passionate about
+  driving "Shift-Left" Agile maturity, mentoring developers on ISTQB gTAA (Generic Test Automation Architecture) principles, and acting as a
+  Quality Advisor to seamlessly integrate automated quality gates into the SDLC.
+
 experience:
   - company: Eurowings Digital
     title: QA Automation Engineer
@@ -18,12 +25,12 @@ experience:
     start: "2024-12"
     end: present
     bullets:
-      - Architected a modular, ISTQB-aligned E2E framework (Playwright/TypeScript) from greenfield, replacing a legacy monolith; decoupled page objects into domain-specific fixture factories aligned with the Vue/Nuxt application architecture.
-      - Enforced architectural boundaries via custom ESLint AST plugins, banning locale-sensitive selectors and restricting locator creation to Page Objects, converting architectural rules into automated CI gates.
-      - Engineered an API-driven test data factory (Factory + Strategy pattern) and a self-healing cron pipeline classifying live flight routes by schedule reliability, eliminating manual test data maintenance.
-      - Designed GitHub Actions workflows for 4-shard parallel execution across 36 browser/locale project combinations; achieved >90% branch coverage on framework utilities via Vitest.
-      - Sole QA Automation Engineer embedded across two cross-functional squads (10 developers); drove Shift-Left testing from Sprint Refinement, conducted regular exploratory and release-cycle manual regression testing, and mentored developers on ISTQB gTAA principles to enable independent E2E test authorship.
-      - Established AI-assisted test authoring by integrating LLM agents into engineering workflows; authored standardized prompt contexts (AGENTS.md / llms.txt) to align LLM-generated code with the project architecture, reducing framework maintenance overhead.
+      - Architected a modular, ISTQB-aligned E2E framework (**Playwright/TypeScript**) from greenfield, replacing a legacy monolith; decoupled page objects into domain-specific fixture factories aligned with the **Vue/Nuxt** application architecture.
+      - Enforced architectural boundaries via **custom ESLint AST plugins**, banning locale-sensitive selectors and restricting locator creation to Page Objects, converting architectural rules into automated CI gates.
+      - Engineered an API-driven test data factory (Factory + Strategy pattern) and a **self-healing cron pipeline** classifying live flight routes by schedule reliability, eliminating manual test data maintenance.
+      - Designed **GitHub Actions** workflows for 4-shard parallel execution across 36 browser/locale project combinations; achieved **>90% branch coverage** on framework utilities via Vitest.
+      - Acted as Quality Advisor across two cross-functional squads (10 developers); operationalized Shift-Left testing by establishing **asynchronous risk-based QA workflows** during backlog refinement and introducing developer self-testing checklists, decentralizing quality ownership and preventing QA bottlenecks.
+      - Established AI-assisted test authoring by integrating **LLM agents** into engineering workflows; authored standardized prompt contexts (AGENTS.md / llms.txt) to align LLM-generated code with the project architecture, reducing framework maintenance overhead.
 
   - company: Quandoo
     title: QA Engineer
@@ -60,10 +67,6 @@ education:
   - degree: "Bachelor's degree in Electronic Computing Machine Development and Technology"
     school: Southwest State University
     year: 2008
-
-certifications:
-  - name: "ISTQB Certified Tester Foundation Level (CTFL)"
-    status: "in progress"
 
 skills:
   - category: Test Automation
@@ -108,7 +111,7 @@ skills:
     items:
       - Agile
       - Scrum
-      - ISTQB gTAA
+      - ISTQB Standards & Architecture
       - Shift-left
       - Defect Management
   - category: AI / LLM

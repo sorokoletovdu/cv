@@ -2,9 +2,9 @@
 import { getEntry } from 'astro:content';
 import WebLayout from '../layouts/WebLayout.astro';
 import Header from '../components/Header.astro';
+import Summary from '../components/Summary.astro';
 import WorkExperience from '../components/WorkExperience.astro';
 import Education from '../components/Education.astro';
-import Certifications from '../components/Certifications.astro';
 import Skills from '../components/Skills.astro';
 
 const resume = await getEntry('resume', 'resume');
@@ -23,10 +23,8 @@ const { data } = resume;
     permit={data.permit}
     languages={data.languages}
   />
+  {data.summary && <Summary summary={data.summary} />}
   <WorkExperience experience={data.experience} />
   <Education education={data.education} />
-  {data.certifications && data.certifications.length > 0 && (
-    <Certifications certifications={data.certifications} />
-  )}
   <Skills skills={data.skills} />
 </WebLayout>
