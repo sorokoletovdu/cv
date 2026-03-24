@@ -3,6 +3,10 @@ import SectionHeader from './SectionHeader.astro';
 import { formatDate } from '../lib/formatDate';
 import type { ExperienceEntry } from '../lib/types';
 
+function boldToHtml(text: string): string {
+  return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+}
+
 interface Props {
   experience: ExperienceEntry[];
 }
@@ -30,7 +34,7 @@ const { experience } = Astro.props;
       {entry.bullets.map((bullet) => (
         <li class="text-[0.78rem] text-(--color-gray) flex gap-2">
           <span class="text-(--color-dark) mt-[0.15em] shrink-0">•</span>
-          <span>{bullet}</span>
+          <span set:html={boldToHtml(bullet)} />
         </li>
       ))}
     </ul>

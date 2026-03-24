@@ -4,6 +4,7 @@ import type { ExperienceEntry } from '../../lib/types.js';
 import { PDFSectionHeader } from './PDFSectionHeader.js';
 import { theme } from '../theme.js';
 import { formatDate } from '../../lib/formatDate.js';
+import { parseBold } from '../../lib/parseBold.js';
 
 const s = StyleSheet.create({
   entry: { marginBottom: 8 },
@@ -48,6 +49,12 @@ const s = StyleSheet.create({
     flex: 1,
     lineHeight: 1.35,
   },
+  bulletBold: {
+    fontFamily: theme.fonts.body,
+    fontSize: theme.sizes.body,
+    fontWeight: 700,
+    color: theme.colors.gray,
+  },
 });
 
 interface Props {
@@ -57,9 +64,9 @@ interface Props {
 export function PDFExperience({ experience }: Props) {
   return (
     <View>
-      <PDFSectionHeader title="Work Experience" />
       {experience.map((entry, i) => (
         <View key={i} style={s.entry} wrap={false}>
+          {i === 0 && <PDFSectionHeader title="Work Experience" />}
           <View style={s.entryHeader}>
             <View style={s.titleBlock}>
               <Text style={s.entryTitle}>{entry.title}</Text>
@@ -72,7 +79,11 @@ export function PDFExperience({ experience }: Props) {
             {entry.bullets.map((bullet, j) => (
               <View key={j} style={s.bulletRow}>
                 <Text style={s.bulletMark}>•</Text>
-                <Text style={s.bulletText}>{bullet}</Text>
+                <Text style={s.bulletText}>
+                  {parseBold(bullet).map((seg, k) => (
+                    <Text key={k} style={seg.bold ? s.bulletBold : undefined}>{seg.text}</Text>
+                  ))}
+                </Text>
               </View>
             ))}
           </View>
