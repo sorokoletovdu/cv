@@ -2,7 +2,7 @@
 
 `spec://cv/wal`
 
-Last updated: 2026-03-24 | Session: Professional Summary added, certifications removed, bold markdown, PDF page-break fixes
+Last updated: 2026-03-24 | Session: ats-check dual-mode, Present capitalisation fix
 
 > **SESSION OPEN PROCEDURE**
 >
@@ -14,20 +14,22 @@ Last updated: 2026-03-24 | Session: Professional Summary added, certifications r
 
 ## Current State {#state}
 
-**Overall status**: uncommitted changes — session work done, not yet committed
+**Overall status**: clean — all changes committed and pushed (51d6275)
 
 | Area | Status |
 |---|---|
-| Professional Summary | Added across all layers (data, schema, types, web, PDF) — uncommitted |
-| Certifications section | Removed from all layers — uncommitted |
-| Bold markdown in bullets | `**text**` renders as `<strong>` on web, inline bold in PDF — uncommitted |
-| PDF page-break control | Section header anchored to first entry in Experience; compact sections wrapped with `wrap={false}` — uncommitted |
+| Professional Summary | Complete — committed 66ea142 |
+| Certifications section | Removed — committed 66ea142 |
+| Bold markdown in bullets | Complete — committed 0993a1a |
+| PDF page-break control | Complete — committed b6b8bc0 |
+| ats-check dual-mode | Complete — committed 930a1cf |
+| `Present` capitalisation | Fixed — committed 51d6275 |
 
 ---
 
 ## Pending Work {#pending}
 
-- [ ] Commit session changes (split into logical commits per CLAUDE.md atomicity rules)
+- [x] All previous implementation phases complete (see git log).
 
 ---
 
@@ -54,8 +56,8 @@ No blocking issues.
 
 ## Next Session Must Read {#next}
 
-Uncommitted changes from this session. Run `git diff --stat` to see affected files. Commit before starting new feature work, splitting by concern:
-1. `feat(resume): add Professional Summary section` — resume.md, config.ts, types.ts, Summary.astro, PDFSummary.tsx, index.astro, ResumePDF.tsx
-2. `feat(resume): remove certifications section` — resume.md, config.ts, types.ts, index.astro, ResumePDF.tsx (Certifications.astro and PDFCertifications.tsx kept as dead files — can delete)
-3. `feat(pdf,web): render bold markdown in experience bullets` — parseBold.ts, WorkExperience.astro, PDFExperience.tsx
-4. `fix(pdf): prevent section header / entry page-break splits` — PDFExperience.tsx, PDFSummary.tsx, PDFEducation.tsx, PDFSkills.tsx
+No work in progress — ask the user.
+
+Codebase is clean. To run ATS check: ensure `ANTHROPIC_API_KEY` is set in `.env`, then:
+- CV-only mode: keep `docs/JOB-DESCRIPTION-EXAMPLE.md` empty, run `pnpm ats:check`
+- Full JD mode: paste JD into `docs/JOB-DESCRIPTION-EXAMPLE.md`, run `pnpm ats:check`
