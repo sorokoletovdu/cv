@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "generate:pdf": "astro build && tsx scripts/generate-pdf.tsx",
-    "ats:check": "tsx scripts/ats-check.ts"
+    "ats:check": "tsx scripts/ats-check.ts docs/JOB-DESCRIPTION-EXAMPLE.md"
   },
   "dependencies": {
     "@fontsource/open-sans": "^5.2.7",
