@@ -29,7 +29,7 @@ interface Props {
 
 export function PDFSkills({ skills }: Props) {
   return (
-    <View>
+    <View wrap={false}>
       <PDFSectionHeader title="Skills" />
       {skills.map((group, i) => (
         <View key={i} style={s.row}>

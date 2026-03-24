@@ -29,7 +29,7 @@ interface Props {
 
 export function PDFEducation({ education }: Props) {
   return (
-    <View>
+    <View wrap={false}>
       <PDFSectionHeader title="Education" />
       {education.map((entry, i) => (
         <View key={i} style={s.entry}>
