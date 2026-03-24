@@ -7,6 +7,6 @@
 const fmt = new Intl.DateTimeFormat('en-GB', { month: 'short', year: 'numeric' });
 
 export function formatDate(value: string): string {
-  if (value === 'present') return 'Present';
+  if (value === 'Present') return 'Present';
   return fmt.format(new Date(`${value}-01`));
 }
