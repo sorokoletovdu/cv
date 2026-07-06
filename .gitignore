@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# personal local config (LinkedIn MCP session, etc.)
+.mcp.json
+.claude/settings.local.json

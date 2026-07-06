@@ -5,7 +5,7 @@ phone: "+49-1520-388-0560"
 email: sorokoletovdu@icloud.com
 linkedin: https://linkedin.com/in/sorokoletovdu/
 github: https://github.com/sorokoletovdu
-permit: "German work permit: Blaue Karte"
+permit: "German work permit: Niederlassungserlaubnis (NE)"
 languages:
   - English (Fluent)
   - Deutsch (Beginner)
